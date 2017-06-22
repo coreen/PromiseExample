@@ -8,21 +8,22 @@ var pizza = {
 	eaten: false
 };
 
-var cookPizza = new Promise(function(resolve, reject) {
-	setTimeout(function() {
-		pizza.cooked = true;
-		resolve(pizza);
-	}, 5000);
-});
+function cookPizza() {
+	return new Promise(function(resolve, reject) {
+		setTimeout(function() {
+			pizza.cooked = true;
+			resolve(pizza);
+		}, 5000);
+	});
+}
 
 function eat(pizza) {
 	pizza.eaten = true;
 	console.log('eaten pizza', pizza);
 }
 
-cookPizza
-	.then(function(pizza) {
-		console.log('cooked pizza', pizza);
-		eat(pizza);
-	});
+cookPizza().then(function(pizza) {
+	console.log('cooked pizza', pizza);
+	eat(pizza);
+});
 
