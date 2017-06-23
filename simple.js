@@ -1,6 +1,4 @@
-var Promise = require('bluebird');
-
-var pizza = {
+let pizza = {
 	toppings: {
 		pepperoni: 8
 	},

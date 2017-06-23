@@ -1,22 +1,20 @@
-var Promise = require('bluebird');
-
-var pizza = {
+let pizza = {
 	toppings: {
 		pepperoni: 8
 	},
 	cooked: false
 };
-var cookPizza = new Promise(function(resolve, reject) {
+const cookPizza = new Promise(function(resolve, reject) {
 	setTimeout(function() {
 		pizza.cooked = true;
 		resolve(pizza);
 	}, 5000);
 });
 
-var table = {
+let table = {
 	set: false
 };
-var setTable = new Promise(function(resolve, reject) {
+const setTable = new Promise(function(resolve, reject) {
 	setTimeout(function() {
 		table.set = true;
 		resolve(table);
